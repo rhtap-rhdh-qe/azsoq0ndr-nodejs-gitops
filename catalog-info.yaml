@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: azsoq0ndr-nodejs-gitops
+  description: This is GitOps manifest for azsoq0ndr-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=azsoq0ndr-nodejs
+    backstage.io/kubernetes-id: azsoq0ndr-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: azsoq0ndr-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:azsoq0ndr-nodejs
